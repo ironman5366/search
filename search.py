@@ -86,6 +86,10 @@ def google_search(user_query, user):
 		
 			
 def main(query, user, appid):
-	wlfram_search(query, user, appid)
+	try:
+		wlfram_search(query, user, appid)
+	except TypeError:
+		return "Couldn't find any results for query {0}. User is {1} and appid is {2}".format(
+			query,user,appid)
 #start main with an appid or uncomment the below line
 #appid = raw_input("Please enter a wolframalpha app id")
